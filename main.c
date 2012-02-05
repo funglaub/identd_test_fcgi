@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 
       gettimeofday(&stop, NULL); 
       curtime = stop.tv_sec;
-      elapsed = (stop.tv_sec-start.tv_sec)*1000000 + stop.tv_usec-start.tv_usec;
+      elapsed = (stop.tv_sec-start.tv_sec)*1000000 + stop.tv_usec-start.tv_usec; // in 1e-6 seconds
       
       printf("Content-type: text/plain\r\n"
              "\r\n"

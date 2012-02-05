@@ -1,6 +1,8 @@
 .PHONY = ALL CLEAN
 
-CC = gcc -Wall -pedantic -std=c99 -lfcgi
+#CC = gcc -Wall -pedantic -std=c99 -lfcgi
+# BSD:
+CC = gcc -Wall -pedantic -std=c99 -L/usr/local/lib -I/usr/local/include -lfcgi
 
 ALL: main
 
