@@ -20,7 +20,7 @@ int query_identd(char *buffer, char *remote_addr, char *remote_port) {
   static const char *www_port = ",80\n";
   char *request;
   
-  sockfd = socket(AF_INET, SOCK_STREAM, 0);
+  sockfd = socket(AF_INET6, SOCK_STREAM, 0);
   
   if (sockfd < 0) {
     perror("ERROR opening socket");
@@ -35,7 +35,7 @@ int query_identd(char *buffer, char *remote_addr, char *remote_port) {
   }
   
   memset((char *) &serv_addr, 0, sizeof(serv_addr));
-  serv_addr.sin_family = AF_INET;
+  serv_addr.sin_family = AF_INET6;
   memcpy((char *)&serv_addr.sin_addr.s_addr,
          (char *)server->h_addr_list[0],
          server->h_length);
